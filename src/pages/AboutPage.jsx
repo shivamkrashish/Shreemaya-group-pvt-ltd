@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import chairm from "../assets/chairman.jpeg";
 import Footer from "../components/Footer"
 
 const fadeUp = {
@@ -130,7 +129,7 @@ const About = () => {
           {/* IMAGE */}
           <motion.img
             whileHover={{ scale: 1.05 }}
-            src={chairm}
+            src="https://plus.unsplash.com/premium_photo-1661508620175-3ae20da61cda?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtYW58ZW58MHx8MHx8fDA%3D"
             alt="chairman"
             className="w-44 h-44 rounded-full object-cover border-4 border-white dark:border-gray-700"
           />
