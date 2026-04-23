@@ -8,6 +8,7 @@ import Testimonials from "../components/Testimonials";
 import bg1 from "../assets/2.jpeg";
 import bg2 from "../assets/3.jpeg";
 import bg3 from "../assets/4.jpeg";
+import chairman from "../assets/chairman.jpeg"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -215,7 +216,7 @@ const Home = () => {
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-emerald-600 blur-xl opacity-40"></div>
 
       <img
-        src="https://plus.unsplash.com/premium_photo-1661508620175-3ae20da61cda?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtYW58ZW58MHx8MHx8fDA%3D"
+        src= {chairman}
         alt="Chairman"
         className="relative w-44 h-44 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg"
       />
