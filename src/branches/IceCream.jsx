@@ -599,7 +599,7 @@ const deleteOrder = (id) => {
           {/* BUTTON */}
           <button
             onClick={() => addToCart(p)}
-            className="mt-2 w-full py-1 md:py-2 bg-pink-600 text-white rounded text-sm hover:bg-pink-700 transition"
+            className="mt-2 w-full py-1 md:py-2 bg-pink-700 text-white rounded text-sm hover:bg-pink-300 active:bg-gray-900 transition"
           >
             Add to Cart
           </button>
