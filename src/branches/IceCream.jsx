@@ -168,7 +168,7 @@ const productsData = [
 const categories = ["All", "Classic", "Chocolate", "Fruit", "Premium", "Coffee", "Kids"];
 
 /* ================== COMPONENT ================== */
-const Dairy = () => {
+const Icecrem = () => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
@@ -911,4 +911,4 @@ const deleteOrder = (id) => {
   );
 };
 
-export default Dairy;
+export default Icecrem;
