@@ -4,12 +4,13 @@ import Footer from "../components/Footer";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-/* ================== PRODUCTS ================== */
+/* ================== PRODUCTS (WITH DISCOUNT) ================== */
 const productsData = [
   {
     id: 1,
     name: "Fresh Cow Milk",
     price: 50,
+    discountPrice: 45,
     category: "Milk",
     img: "https://4.imimg.com/data4/WE/NC/IMOB-44709808/images1-500x500.jpg",
     desc: "Farm fresh pure cow milk delivered daily.",
@@ -21,9 +22,10 @@ const productsData = [
     id: 2,
     name: "Buffalo Milk",
     price: 60,
+    discountPrice: 52,
     category: "Milk",
     img: "https://img.clevup.in/408224/BuffaloMilk-1731154310288.png?format=webp",
-    desc: "Rich and creamy buffalo milk for better nutrition.",
+    desc: "Rich and creamy buffalo milk.",
     rating: 4.7,
     reviews: 980
   },
@@ -31,9 +33,10 @@ const productsData = [
     id: 3,
     name: "Full Cream Milk",
     price: 55,
+    discountPrice: 49,
     category: "Milk",
     img: "https://tiimg.tistatic.com/fp/1/008/171/pure-healthy-raw-original-no-added-preservative-full-cream-milk-057.jpg",
-    desc: "High fat full cream milk for strong health.",
+    desc: "High fat full cream milk.",
     rating: 4.5,
     reviews: 870
   },
@@ -41,9 +44,10 @@ const productsData = [
     id: 4,
     name: "Paneer Premium",
     price: 320,
+    discountPrice: 289,
     category: "Cheese",
     img: "https://cms.patrika.com/wp-content/uploads/2020/02/13/paneer.jpg",
-    desc: "Soft and fresh paneer perfect for cooking.",
+    desc: "Soft and fresh paneer.",
     rating: 4.8,
     reviews: 2100,
     badge: "TOP RATED"
@@ -52,9 +56,10 @@ const productsData = [
     id: 5,
     name: "Mozzarella Cheese",
     price: 280,
+    discountPrice: 249,
     category: "Cheese",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZvEnOsWJiWPvjnKfAm_zINt0e6umW7YJiYQ&s",
-    desc: "Stretchy cheese ideal for pizza & snacks.",
+    desc: "Perfect for pizza & snacks.",
     rating: 4.6,
     reviews: 670
   },
@@ -62,9 +67,10 @@ const productsData = [
     id: 6,
     name: "Cheddar Cheese",
     price: 300,
+    discountPrice: 269,
     category: "Cheese",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5nlq3saP698Ne5hWZQWkZxEDltG-TFrYISg&s",
-    desc: "Aged cheddar cheese with rich taste.",
+    desc: "Aged cheddar rich taste.",
     rating: 4.5,
     reviews: 520
   },
@@ -72,9 +78,10 @@ const productsData = [
     id: 7,
     name: "Desi Ghee (Pure)",
     price: 650,
+    discountPrice: 599,
     category: "Ghee",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOqZ5UxSzSzXxUWjeanSxNzv9U4j9ZByTRfA&s",
-    desc: "Traditional bilona method ghee.",
+    desc: "Traditional bilona ghee.",
     rating: 4.9,
     reviews: 3100,
     badge: "BESTSELLER"
@@ -83,9 +90,10 @@ const productsData = [
     id: 8,
     name: "Cow Ghee",
     price: 600,
+    discountPrice: 549,
     category: "Ghee",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlyEQyIKfqmoSNM3F1TWjlQyuvq-T-7RLqYA&s",
-    desc: "Healthy and aromatic cow ghee.",
+    desc: "Healthy aromatic ghee.",
     rating: 4.7,
     reviews: 1500
   },
@@ -93,9 +101,10 @@ const productsData = [
     id: 9,
     name: "Curd (Dahi)",
     price: 80,
+    discountPrice: 70,
     category: "Curd",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCefELjIIxDdTjQmRbOSF3BkOZ6i0U2ptHDw&s",
-    desc: "Thick and creamy homemade curd.",
+    desc: "Thick homemade curd.",
     rating: 4.6,
     reviews: 900
   },
@@ -103,9 +112,10 @@ const productsData = [
     id: 10,
     name: "Greek Yogurt",
     price: 120,
+    discountPrice: 105,
     category: "Curd",
     img: "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/323/323169/greek-yoghurt-in-bowl.jpg?w=1155&h=1541",
-    desc: "Protein-rich Greek yogurt.",
+    desc: "Protein-rich yogurt.",
     rating: 4.7,
     reviews: 430,
     badge: "NEW"
@@ -114,9 +124,10 @@ const productsData = [
     id: 11,
     name: "Salted Butter",
     price: 120,
+    discountPrice: 109,
     category: "Butter",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCKx3D4dWtF_b5qvkRJeLSiVLqxFmhFuVZkA&s",
-    desc: "Creamy salted butter for daily use.",
+    desc: "Creamy butter.",
     rating: 4.5,
     reviews: 780
   },
@@ -124,21 +135,21 @@ const productsData = [
     id: 12,
     name: "Unsalted Butter",
     price: 130,
+    discountPrice: 115,
     category: "Butter",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6VdEIq8yU-y9HEjiyiFAvMz3qjFexNpV4g&s",
-    desc: "Perfect for baking and cooking.",
+    desc: "Best for baking.",
     rating: 4.6,
     reviews: 620
   },
-
-  /* 🔥 ADD MORE VARIETY */
   {
     id: 13,
     name: "Flavored Milk (Chocolate)",
     price: 60,
+    discountPrice: 52,
     category: "Milk",
     img: "https://5.imimg.com/data5/ANDROID/Default/2022/3/IF/AU/YA/148854515/product-jpeg-500x500.jpg",
-    desc: "Delicious chocolate flavored milk.",
+    desc: "Chocolate flavored milk.",
     rating: 4.4,
     reviews: 340
   },
@@ -146,16 +157,18 @@ const productsData = [
     id: 14,
     name: "Lassi Sweet",
     price: 40,
+    discountPrice: 35,
     category: "Curd",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMLiSE5B5dinXCOHeE4UPuaOPILGLKjl6JCw&s",
-    desc: "Refreshing traditional sweet lassi.",
+    desc: "Refreshing sweet lassi.",
     rating: 4.6,
     reviews: 880
   },
   {
     id: 15,
-    name: "Ice Cream VanillaIce Cream Vanilla",
+    name: "Vanilla Ice Cream",
     price: 90,
+    discountPrice: 79,
     category: "Butter",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6UsvZ0Izhlb613DGwhCRzCKPzZa3mk8Vf3g&s",
     desc: "Classic vanilla ice cream.",
@@ -166,9 +179,10 @@ const productsData = [
     id: 16,
     name: "Khoya",
     price: 280,
+    discountPrice: 250,
     category: "Milk",
     img: "https://www.grocio.in/upload_images/product/big/4121620396860.jpg",
-    desc: "Fresh khoya for sweets preparation.",
+    desc: "Fresh khoya.",
     rating: 4.5,
     reviews: 560
   },
@@ -176,12 +190,13 @@ const productsData = [
     id: 17,
     name: "Milk Powder",
     price: 400,
+    discountPrice: 359,
     category: "Milk",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc3kevXi8E4T3OfMatipGplRERKOj0cfvyKg&s",
-    desc: "Instant milk powder for quick use.",
+    desc: "Instant milk powder.",
     rating: 4.4,
     reviews: 430
-  },
+  }
 ];
 
 const categories = ["All", "Milk", "Cheese", "Ghee", "Curd", "Butter"];
@@ -247,39 +262,71 @@ const filtered = productsData.filter((p) => {
     )
   );
 });
+/* ================== CART ================== */
 
-  /* ================== CART ================== */
-  const addToCart = (item) => {
-    const exist = cart.find((i) => i.id === item.id);
-    if (exist) {
-      setCart(cart.map((i) =>
-        i.id === item.id ? { ...i, qty: i.qty + 1 } : i
-      ));
-    } else {
-      setCart([...cart, { ...item, qty: 1 }]);
-    }
-  };
+// ADD TO CART
+const addToCart = (item) => {
+  const exist = cart.find((i) => i.id === item.id);
 
-  const increaseQty = (id) => {
-    setCart(cart.map((i) =>
+  if (exist) {
+    setCart(
+      cart.map((i) =>
+        i.id === item.id
+          ? { ...i, qty: i.qty + 1 }
+          : i
+      )
+    );
+  } else {
+    setCart([
+      ...cart,
+      {
+        ...item,
+        qty: 1,
+        originalPrice: item.price,  
+        price: item.discountPrice || item.price 
+      },
+    ]);
+  }
+};
+
+// INCREASE
+const increaseQty = (id) => {
+  setCart(
+    cart.map((i) =>
       i.id === id ? { ...i, qty: i.qty + 1 } : i
-    ));
-  };
+    )
+  );
+};
 
-  const decreaseQty = (id) => {
-    setCart(cart
+// DECREASE
+const decreaseQty = (id) => {
+  setCart(
+    cart
       .map((i) =>
         i.id === id ? { ...i, qty: i.qty - 1 } : i
       )
       .filter((i) => i.qty > 0)
-    );
-  };
+  );
+};
 
-  const total = cart.reduce((a, b) => a + b.price * b.qty, 0);
-  
+
+const total = cart.reduce(
+  (sum, i) => sum + (i.discountPrice || i.price) * i.qty,
+  0
+);
+
+
+const originalTotal = cart.reduce(
+  (sum, i) => sum + (i.originalPrice || i.price) * i.qty,
+  0
+);
+
+// ✅ SAVED AMOUNT
+const saved = originalTotal - total;
 
   /* ================== ORDER ================== */
 const placeOrder = () => {
+
   if (!customer.name || !customer.address || !customer.phone) {
     alert("Fill all details ❗");
     return;
@@ -298,7 +345,9 @@ const placeOrder = () => {
   const newOrder = {
     id: Date.now(),
     items: cart,
-    total,
+    total,              
+    originalTotal,      
+    saved,              
     payment,
     upi,
     customer,
@@ -310,17 +359,20 @@ const placeOrder = () => {
   setOrders(updated);
   localStorage.setItem("orders", JSON.stringify(updated));
 
+  // RESET
   setCart([]);
   setCheckoutOpen(false);
   setCartOpen(false);
 
   alert("Order Placed 🎉");
 
-  // Auto status update (safe version)
+  // AUTO DELIVERY UPDATE
   setTimeout(() => {
     setOrders((prev) => {
       const updatedOrders = prev.map((o) =>
-        o.id === newOrder.id ? { ...o, status: "Delivered" } : o
+        o.id === newOrder.id
+          ? { ...o, status: "Delivered" }
+          : o
       );
 
       localStorage.setItem("orders", JSON.stringify(updatedOrders));
@@ -328,7 +380,6 @@ const placeOrder = () => {
     });
   }, 3000);
 };
-
 /* ================== DELETE ORDER ================== */
 const deleteOrder = (id) => {
   const filtered = orders.filter((o) => o.id !== id);
@@ -466,6 +517,7 @@ const deleteOrder = (id) => {
     {/* Content */}
     <div className="relative z-10">
 
+      {/* TITLE */}
       <h1 className="text-2xl md:text-5xl font-bold leading-tight">
         🥛 Welcome to Shreemaya Dairy
       </h1>
@@ -474,23 +526,67 @@ const deleteOrder = (id) => {
         Pure. Fresh. Trusted.
       </h2>
 
+      {/* DESCRIPTION */}
       <p className="mt-4 text-sm md:text-base max-w-2xl text-green-50 leading-relaxed">
-        Shreemaya Dairy is the first and most trusted branch of the Shreemaya Group, 
-        delivering farm-fresh dairy products straight to your home. We don’t just sell products — 
-        we deliver <b>purity, hygiene, and trust</b> in every drop.
+        Shreemaya Dairy is the most trusted branch of the Shreemaya Group, delivering
+        farm-fresh dairy products directly to your home. We ensure <b>purity, hygiene,
+        and premium quality</b> in every product.
       </p>
 
       <p className="mt-3 text-sm md:text-base max-w-2xl text-green-100">
-        🐄 Direct from farms | ❄ Hygienic processing | 🚚 Fast delivery | ❤️ Loved by families
+        🐄 Direct from farms | ❄ Hygienic processing | 🚚 Fast delivery | ❤️ Trusted by thousands
       </p>
 
+      {/* ================= FRANCHISE PROFILE ================= */}
+      <div className="mt-6 bg-white/10 backdrop-blur-md p-4 rounded-xl flex flex-col md:flex-row items-center gap-4 border border-white/20">
+
+        {/* USER IMAGE */}
+        <img
+          src="https://randomuser.me/api/portraits/men/75.jpg"
+          className="w-20 h-20 rounded-full border-2 border-white object-cover"
+          alt="Ashish Gupta"
+        />
+
+        {/* DETAILS */}
+        <div className="text-center md:text-left">
+
+          <h3 className="text-xl font-bold">Ashish Gupta</h3>
+          <p className="text-green-100 text-sm">
+            Franchise Owner – Shreemaya Dairy (Patna, Bihar)
+          </p>
+
+          <p className="text-xs mt-2 text-green-50 max-w-md">
+            Proud franchise partner of Shreemaya Group, managing dairy operations with a focus on
+            quality, freshness, and customer satisfaction. Ensuring every household gets pure milk
+            and dairy products daily.
+          </p>
+
+          {/* RATING */}
+          <div className="flex items-center justify-center md:justify-start gap-2 mt-2">
+            <span className="text-yellow-300">⭐⭐⭐⭐⭐</span>
+            <span className="text-sm text-white/90">
+              4.9 / 5.0 Trusted Partner
+            </span>
+          </div>
+
+          {/* FEEDBACK */}
+          <p className="text-xs mt-2 text-green-100 italic">
+            "Shreemaya Group has provided outstanding support, high-quality products,
+            and a strong brand value. Customers trust us because of their consistent quality
+            and service."
+          </p>
+
+        </div>
+      </div>
+
+      {/* CTA BUTTONS */}
       <div className="flex flex-wrap gap-3 mt-6">
 
         <button
           onClick={() => window.scrollTo({ top: 600, behavior: "smooth" })}
           className="px-6 py-2 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
-          Shop Fresh Products
+          Shop Fresh Products 🛒
         </button>
 
         <button
@@ -502,7 +598,7 @@ const deleteOrder = (id) => {
 
       </div>
 
-      {/* Trust Badges */}
+      {/* TRUST BADGES */}
       <div className="flex flex-wrap gap-4 mt-6 text-sm">
 
         <div className="bg-white/20 px-3 py-1 rounded-full">
@@ -525,7 +621,6 @@ const deleteOrder = (id) => {
 
     </div>
   </motion.div>
-
         {/* CATEGORY */}
         <div className="flex gap-3 mb-6 overflow-x-auto">
           {categories.map((c, i) => (
@@ -539,7 +634,7 @@ const deleteOrder = (id) => {
           ))}
         </div>
 
-        {/* PRODUCTS */}
+    {/* ================= PRODUCTS ================= */}
 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
   {filtered.map((p) => (
     <motion.div
@@ -552,12 +647,20 @@ const deleteOrder = (id) => {
       <img
         src={p.img}
         className="h-32 md:h-40 w-full object-cover"
+        alt={p.name}
       />
 
       {/* BADGE */}
       {p.badge && (
-        <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded shadow">
+        <span className="absolute top-2 left-2 bg-amber-500 text-white text-xs px-2 py-1 rounded shadow">
           {p.badge}
+        </span>
+      )}
+
+      {/* DISCOUNT TAG */}
+      {p.discountPrice && (
+        <span className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded">
+          {Math.round(((p.price - p.discountPrice) / p.price) * 100)}% OFF
         </span>
       )}
 
@@ -569,8 +672,22 @@ const deleteOrder = (id) => {
           {p.name}
         </h2>
 
-        {/* PRICE */}
-        <p className="text-green-600 font-bold">₹{p.price}</p>
+        {/* PRICE SECTION */}
+        <div className="flex items-center gap-2 mt-1">
+
+          {/* DISCOUNT PRICE */}
+          <span className="text-green-600 font-bold">
+            ₹{p.discountPrice || p.price}
+          </span>
+
+          {/* ORIGINAL PRICE */}
+          {p.discountPrice && (
+            <span className="line-through text-gray-400 text-xs">
+              ₹{p.price}
+            </span>
+          )}
+
+        </div>
 
         {/* DESCRIPTION */}
         <p className="text-xs text-gray-500 mt-1 line-clamp-2">
@@ -579,7 +696,7 @@ const deleteOrder = (id) => {
 
         {/* RATING */}
         <div className="flex items-center gap-2 mt-2 text-xs md:text-sm">
-          <span className="bg-green-600 text-white px-2 py-[2px] rounded">
+          <span className="bg-green-700 text-white px-2 py-[2px] rounded">
             ⭐ {p.rating}
           </span>
           <span className="text-gray-500">
@@ -590,16 +707,16 @@ const deleteOrder = (id) => {
         {/* BUTTON */}
         <button
           onClick={() => addToCart(p)}
-          className="mt-2 w-full py-1 md:py-2 bg-green-700 text-white rounded text-sm active:bg-gray-900 hover:bg-green-300 transition"
+          className="mt-3 w-full py-1 md:py-2 bg-gradient-to-r bg-green-600 active:bg-amber-200 hover:bg-green-900 text-white rounded text-sm transition"
         >
-          Add to Cart
+          🛒 Add to Cart
         </button>
 
       </div>
     </motion.div>
   ))}
 </div>
-      </div>
+</div>
 
       {/* ================= CART ================= */}
       {cartOpen && (

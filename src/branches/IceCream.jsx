@@ -4,12 +4,12 @@ import Footer from "../components/Footer";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-/* ================== PRODUCTS ================== */
 const productsData = [
   {
     id: 1,
     name: "Vanilla Bliss",
     price: 100,
+    discountPrice: 85,
     category: "Classic",
     img: "https://images.unsplash.com/photo-1560008581-09826d1de69e",
     desc: "Creamy vanilla ice cream with rich flavor.",
@@ -21,6 +21,7 @@ const productsData = [
     id: 2,
     name: "Chocolate Dream",
     price: 120,
+    discountPrice: 99,
     category: "Chocolate",
     img: "https://www.foodnetwork.com/content/dam/images/food/fullset/2021/08/06/WU2812_No-Churn-Chocolate-Dream-Ice-Cream_s4x3.jpg",
     desc: "Rich dark chocolate ice cream scoop.",
@@ -32,6 +33,7 @@ const productsData = [
     id: 3,
     name: "Strawberry Love",
     price: 110,
+    discountPrice: 90,
     category: "Fruit",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjy_CmG8FnqFOoKjY--1OFKGb4ZnXEq1hNCg&s",
     desc: "Fresh strawberry flavored ice cream.",
@@ -42,8 +44,9 @@ const productsData = [
     id: 4,
     name: "Mango Magic",
     price: 130,
+    discountPrice: 105,
     category: "Fruit",
-    img: "https://punjabflavours.com/wp-content/uploads/al_opt_content/IMAGE/punjabflavours.com/wp-content/uploads/2024/07/mango-icecream-768x768.png.bv_resized_mobile.png.bv.webp?bv_host=punjabflavours.com",
+    img: "https://punjabflavours.com/wp-content/uploads/al_opt_content/IMAGE/punjabflavours.com/wp-content/uploads/2024/07/mango-icecream-768x768.png.bv_resized_mobile.png.bv.webp",
     desc: "Real mango pulp creamy ice cream.",
     rating: 4.7,
     reviews: 1500,
@@ -53,6 +56,7 @@ const productsData = [
     id: 5,
     name: "Butterscotch Crunch",
     price: 140,
+    discountPrice: 119,
     category: "Premium",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHGJCVn2g2a0BMlc2MmJyrcP-dCaUysLb62Q&s",
     desc: "Crunchy caramel butterscotch delight.",
@@ -60,11 +64,11 @@ const productsData = [
     reviews: 3200,
     badge: "TOP"
   },
-
   {
     id: 6,
     name: "Blueberry Blast",
     price: 150,
+    discountPrice: 125,
     category: "Fruit",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTExP0zXPcz4Vi-iNLkBgE4zpz5Z8Sunttv5A&s",
     desc: "Tangy blueberry ice cream scoop.",
@@ -75,6 +79,7 @@ const productsData = [
     id: 7,
     name: "Pista Royale",
     price: 160,
+    discountPrice: 135,
     category: "Premium",
     img: "https://images.jdmagicbox.com/quickquotes/images_main/shri-nivas-pista-ice-cream-f94h7g75.jpg",
     desc: "Rich pistachio royal flavor.",
@@ -85,6 +90,7 @@ const productsData = [
     id: 8,
     name: "Black Currant",
     price: 135,
+    discountPrice: 110,
     category: "Fruit",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHQN6Twg5OHP0LhlQxkAzn9ibwOh9GoJTG6g&s",
     desc: "Tangy black currant ice cream.",
@@ -95,6 +101,7 @@ const productsData = [
     id: 9,
     name: "Coffee Crunch",
     price: 145,
+    discountPrice: 120,
     category: "Coffee",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkh1GFmxt-hgVUVdbDxcIlNjEO63VUZ6U5vQ&s",
     desc: "Strong coffee flavored ice cream.",
@@ -105,6 +112,7 @@ const productsData = [
     id: 10,
     name: "Oreo Blast",
     price: 155,
+    discountPrice: 129,
     category: "Chocolate",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTibm7UoT5p7j_4nQxQJxWWnv_B-NprVjRdVA&s",
     desc: "Oreo cookies loaded ice cream.",
@@ -116,6 +124,7 @@ const productsData = [
     id: 11,
     name: "Kesar Pista",
     price: 170,
+    discountPrice: 145,
     category: "Premium",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJzN5IYivvXtAeyBTos9JIsUu9GWCsbfAIoA&s",
     desc: "Royal saffron pista ice cream.",
@@ -126,6 +135,7 @@ const productsData = [
     id: 12,
     name: "Bubblegum Pop",
     price: 90,
+    discountPrice: 75,
     category: "Kids",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmP-U1Yc1afq9OzUcr1y_hhq7KgMeTrB2KqA&s",
     desc: "Colorful bubblegum ice cream.",
@@ -136,6 +146,7 @@ const productsData = [
     id: 13,
     name: "Mint Choco",
     price: 150,
+    discountPrice: 125,
     category: "Chocolate",
     img: "https://icecreamfromscratch.com/wp-content/uploads/2023/02/Andes-Ice-Cream-1.2-720x720.jpg",
     desc: "Mint chocolate refreshing ice cream.",
@@ -146,6 +157,7 @@ const productsData = [
     id: 14,
     name: "Honey Almond",
     price: 165,
+    discountPrice: 140,
     category: "Premium",
     img: "https://honey.com/images/default/_thumbnail/honey-and-almond-butter-ice-cream.png",
     desc: "Honey almond premium ice cream.",
@@ -156,6 +168,7 @@ const productsData = [
     id: 15,
     name: "Caramel Swirl",
     price: 140,
+    discountPrice: 115,
     category: "Classic",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQ4YFfqVw0K44VuDWQY0DwajxKBjiiayluA&s",
     desc: "Sweet caramel swirl ice cream.",
@@ -163,7 +176,6 @@ const productsData = [
     reviews: 900
   }
 ];
-
 /* ================== CATEGORIES ================== */
 const categories = ["All", "Classic", "Chocolate", "Fruit", "Premium", "Coffee", "Kids"];
 
@@ -549,14 +561,19 @@ const deleteOrder = (id) => {
     ))}
   </div>
 
-  {/* ================= PRODUCTS ================= */}
-  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+ {/* ================= PRODUCTS ================= */}
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
 
-    {filtered.map((p) => (
+  {filtered.map((p) => {
+    const discountPercent = p.discountPrice
+      ? Math.round(((p.price - p.discountPrice) / p.price) * 100)
+      : 0;
+
+    return (
       <motion.div
         key={p.id}
         whileHover={{ scale: 1.05 }}
-        className="bg-white dark:bg-gray-900 rounded-xl shadow overflow-hidden relative"
+        className="bg-white dark:bg-gray-900 rounded-xl shadow overflow-hidden relative border border-gray-200 dark:border-gray-700"
       >
 
         {/* IMAGE */}
@@ -573,22 +590,46 @@ const deleteOrder = (id) => {
           </span>
         )}
 
+        {/* DISCOUNT BADGE */}
+        {p.discountPrice && (
+          <span className="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded shadow">
+            {discountPercent}% OFF
+          </span>
+        )}
+
         {/* CONTENT */}
         <div className="p-3 md:p-4">
 
+          {/* NAME */}
           <h2 className="dark:text-white text-sm md:text-base font-semibold line-clamp-1">
             {p.name}
           </h2>
 
-          <p className="text-pink-600 font-bold">₹{p.price}</p>
+          {/* PRICE SECTION */}
+          <div className="flex items-center gap-2 mt-1">
 
+            {/* FINAL PRICE */}
+            <span className="text-green-600 font-bold text-sm md:text-base">
+              ₹{p.discountPrice || p.price}
+            </span>
+
+            {/* ORIGINAL PRICE */}
+            {p.discountPrice && (
+              <span className="line-through text-gray-400 text-xs">
+                ₹{p.price}
+              </span>
+            )}
+
+          </div>
+
+          {/* DESCRIPTION */}
           <p className="text-xs text-gray-500 mt-1 line-clamp-2">
             {p.desc}
           </p>
 
           {/* RATING */}
           <div className="flex items-center gap-2 mt-2 text-xs md:text-sm">
-            <span className="bg-pink-600 text-white px-2 py-[2px] rounded">
+            <span className="bg-green-600 text-white px-2 py-[2px] rounded">
               ⭐ {p.rating}
             </span>
             <span className="text-gray-500">
@@ -599,94 +640,74 @@ const deleteOrder = (id) => {
           {/* BUTTON */}
           <button
             onClick={() => addToCart(p)}
-            className="mt-2 w-full py-1 md:py-2 bg-pink-700 text-white rounded text-sm hover:bg-pink-300 active:bg-gray-900 transition"
+            className="mt-3 w-full py-1 md:py-2  bg-pink-600 hover:bg-indigo-400 active:bg-gray-900 text-white rounded text-sm hover:opacity-90 active:scale-95 transition"
           >
-            Add to Cart
+            🛒 Add to Cart
           </button>
 
         </div>
 
       </motion.div>
-    ))}
-  </div>
-
+    );
+  })}
+</div>
 </div>
 
-      {/* ================= CART ================= */}
+   {/* ================= CART ================= */}
 {cartOpen && (
   <div className="fixed inset-0 flex z-50">
 
-    {/* BACKDROP */}
     <div
       className="flex-1 bg-black/60 backdrop-blur-sm"
       onClick={() => setCartOpen(false)}
     />
 
-    {/* CART PANEL */}
-    <div className="w-80 md:w-96 bg-gradient-to-br from-pink-500 via-rose-500 to-pink-600 text-white p-5 overflow-y-auto shadow-2xl">
+    <div className="w-80 md:w-96 bg-gradient-to-br from-pink-700 via-puple-500 to-blue-600 text-white p-5 overflow-y-auto shadow-2xl">
 
       {/* HEADER */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">🍦 Your Cart</h2>
-
-        <button
-          onClick={() => setCartOpen(false)}
-          className="bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition"
-        >
+        <h2 className="text-xl font-bold">🛒 Your Cart</h2>
+        <button onClick={() => setCartOpen(false)} className="bg-white/20 px-2 py-1 rounded">
           ✖
         </button>
       </div>
 
-      {/* EMPTY STATE */}
       {cart.length === 0 ? (
         <div className="text-center py-10">
-          <p className="text-white/80">Your cart is empty 😢</p>
-          <p className="text-xs text-white/60 mt-1">
-            Add some delicious ice creams 🍦
-          </p>
+          <p>Your cart is empty 😢</p>
         </div>
       ) : (
         cart.map((i) => (
-          <div
-            key={i.id}
-            className="flex gap-3 mb-4 bg-white/10 p-3 rounded-xl border border-white/20 backdrop-blur-md"
-          >
+          <div key={i.id} className="flex gap-3 mb-4 bg-white/10 p-3 rounded-xl">
 
-            {/* IMAGE */}
-            <img
-              src={i.img}
-              className="w-14 h-14 rounded-lg object-cover"
-            />
+            <img src={i.img} className="w-14 h-14 rounded-lg object-cover" />
 
-            {/* DETAILS */}
             <div className="flex-1">
               <p className="text-sm font-semibold">{i.name}</p>
 
-              {/* QUANTITY */}
+              {/* PRICE */}
+              <div className="text-xs mt-1">
+                <span className="text-yellow-300 font-bold">
+                  ₹{i.discountPrice || i.price}
+                </span>
+                {i.discountPrice && (
+                  <span className="line-through text-gray-300 ml-2">
+                    ₹{i.price}
+                  </span>
+                )}
+              </div>
+
+              {/* QTY */}
               <div className="flex items-center gap-2 mt-2">
-
-                <button
-                  onClick={() => decreaseQty(i.id)}
-                  className="bg-white/20 px-2 rounded hover:bg-white/30"
-                >
-                  -
-                </button>
-
-                <span className="font-bold">{i.qty}</span>
-
-                <button
-                  onClick={() => increaseQty(i.id)}
-                  className="bg-white/20 px-2 rounded hover:bg-white/30"
-                >
-                  +
-                </button>
-
+                <button onClick={() => decreaseQty(i.id)} className="bg-white/20 px-2">-</button>
+                <span>{i.qty}</span>
+                <button onClick={() => increaseQty(i.id)} className="bg-white/20 px-2">+</button>
               </div>
             </div>
 
-            {/* PRICE */}
+            {/* TOTAL ITEM PRICE */}
             <div className="font-bold text-yellow-200">
-              ₹{i.price * i.qty}
+              ₹{(i.discountPrice || i.price) * i.qty}
             </div>
 
           </div>
@@ -697,9 +718,25 @@ const deleteOrder = (id) => {
       {cart.length > 0 && (
         <div className="mt-5 border-t border-white/30 pt-4">
 
-          <div className="flex justify-between text-lg font-bold">
+          <div className="flex justify-between">
+            <span>MRP</span>
+            <span className="line-through">
+              ₹{cart.reduce((sum, i) => sum + i.price * i.qty, 0)}
+            </span>
+          </div>
+
+          <div className="flex justify-between text-green-300 text-sm">
+            <span>You Saved</span>
+            <span>
+              ₹{cart.reduce((sum, i) => sum + (i.price - (i.discountPrice || i.price)) * i.qty, 0)}
+            </span>
+          </div>
+
+          <div className="flex justify-between text-lg font-bold mt-2">
             <span>Total</span>
-            <span className="text-yellow-200">₹{total}</span>
+            <span className="text-yellow-200">
+              ₹{cart.reduce((sum, i) => sum + (i.discountPrice || i.price) * i.qty, 0)}
+            </span>
           </div>
 
           <button
@@ -707,9 +744,9 @@ const deleteOrder = (id) => {
               setCartOpen(false);
               setCheckoutOpen(true);
             }}
-            className="mt-4 w-full py-2 bg-white text-pink-600 font-bold rounded-lg hover:bg-gray-100 transition"
+            className="mt-4 w-full py-2 bg-white text-purple-700 font-bold rounded-lg"
           >
-            🍦 Checkout Now
+            Checkout Now 🚀
           </button>
 
         </div>
@@ -718,17 +755,15 @@ const deleteOrder = (id) => {
     </div>
   </div>
 )}
-      {/* ================= CHECKOUT ================= */}
+     {/* ================= CHECKOUT ================= */}
 {checkoutOpen && (
   <div
     className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 backdrop-blur-sm"
-    onClick={() => setCheckoutOpen(false)}   // OUTSIDE CLOSE
+    onClick={() => setCheckoutOpen(false)}
   >
-
-    {/* MODAL */}
     <div
-      className="bg-gradient-to-br from-pink-500 via-rose-500 to-pink-600 text-white p-6 rounded-2xl w-80 max-h-[90vh] overflow-y-auto shadow-2xl border border-white/20"
-      onClick={(e) => e.stopPropagation()}   // INSIDE SAFE
+      className="bg-gradient-to-br from-pink-700 via-puple-500 to-blue-600 text-white p-6 rounded-2xl w-80 max-h-[90vh] overflow-y-auto shadow-2xl border border-white/20"
+      onClick={(e) => e.stopPropagation()}
     >
 
       {/* HEADER */}
@@ -777,19 +812,20 @@ const deleteOrder = (id) => {
           }
         />
 
-        {/* PAYMENT */}
+        {/* PAYMENT METHOD */}
         <select
+          value={payment}
           className="w-full p-2 rounded bg-white/20 text-white outline-none"
           onChange={(e) => setPayment(e.target.value)}
         >
-          <option className="text-black">UPI</option>
-          <option className="text-black">COD</option>
+          <option value="UPI" className="text-black">UPI</option>
+          <option value="COD" className="text-black">Cash on Delivery</option>
         </select>
 
         {/* UPI INPUT */}
         {payment === "UPI" && (
           <input
-            placeholder="💳 UPI ID"
+            placeholder="💳 Enter UPI ID"
             className="w-full p-2 rounded bg-white/20 placeholder-white/80 outline-none"
             onChange={(e) => setUpi(e.target.value)}
           />
@@ -797,18 +833,67 @@ const deleteOrder = (id) => {
 
       </div>
 
-      {/* TOTAL */}
-      <div className="mt-4 flex justify-between text-lg font-bold">
-        <span>Total</span>
-        <span className="text-yellow-200">₹{total}</span>
+      {/* PRICE SUMMARY */}
+      <div className="mt-5 bg-white/10 p-4 rounded-xl">
+
+        {/* MRP TOTAL */}
+        <div className="flex justify-between text-sm line-through text-white/70">
+          <span>MRP Total</span>
+          <span>
+            ₹{cart.reduce((sum, i) => sum + i.price * i.qty, 0)}
+          </span>
+        </div>
+
+        {/* SAVINGS */}
+        <div className="flex justify-between text-sm text-green-300">
+          <span>You Saved</span>
+          <span>
+            ₹{cart.reduce(
+              (sum, i) =>
+                sum + ((i.price - (i.discountPrice || i.price)) * i.qty),
+              0
+            )}
+          </span>
+        </div>
+
+        {/* FINAL TOTAL */}
+        <div className="flex justify-between text-lg font-bold mt-2">
+          <span>Total</span>
+          <span className="text-yellow-200">
+            ₹{cart.reduce(
+              (sum, i) =>
+                sum + ((i.discountPrice || i.price) * i.qty),
+              0
+            )}
+          </span>
+        </div>
+
       </div>
 
       {/* BUTTON */}
       <button
-        onClick={placeOrder}
-        className="w-full mt-4 py-2 bg-white text-pink-600 font-bold rounded-lg hover:bg-gray-100 transition"
+        onClick={() => {
+          if (
+            !customer.name ||
+            !customer.phone ||
+            !customer.address ||
+            !customer.city ||
+            !customer.pincode
+          ) {
+            alert("⚠️ Please fill all details");
+            return;
+          }
+
+          if (payment === "UPI" && !upi) {
+            alert("⚠️ Please enter UPI ID");
+            return;
+          }
+
+          placeOrder();
+        }}
+        className="w-full mt-5 py-2 bg-white text-pink-600 font-bold rounded-lg hover:bg-gray-100 transition"
       >
-        🍦 Place Order
+        🚀 Place Order
       </button>
 
     </div>
