@@ -476,13 +476,13 @@ const deleteOrder = (id) => {
       <div className="mt-6 bg-white/10 p-4 rounded-xl flex flex-col md:flex-row items-center gap-4">
 
         <img
-          src="https://plus.unsplash.com/premium_photo-1723900969462-c35ff7137e4e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://knowlepedia.org/images/0/0e/Tanya_Mittal.jpg"
           className="w-20 h-20 rounded-full border-2 border-white"
           alt="franchise"
         />
 
         <div>
-          <h3 className="text-xl font-bold">Priya Verma</h3>
+          <h3 className="text-xl font-bold">Mrs. Taniya Mittal</h3>
           <p className="text-pink-100 text-sm">Ice Cream Franchise Head</p>
 
           <p className="text-xs mt-2 text-pink-50">

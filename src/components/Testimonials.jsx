@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import shivam from "../branches/shivam.jpeg"
 
 const testimonials = [
   {
@@ -11,21 +12,21 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Priya Verma",
-    role: "Restaurant Owner",
-    img: "https://plus.unsplash.com/premium_photo-1723900969462-c35ff7137e4e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Mrs. Taniya Mittal",
+    role: "Ice Cream Franchise Head",
+    img: "https://knowlepedia.org/images/0/0e/Tanya_Mittal.jpg",
     review:
       "Shreemaya Group provides consistent quality. Their service and delivery are top-notch!",
     rating: 4.8,
   },
   {
-    name: "Amit Kumar",
-    role: "Distributor",
-    img: "https://images.unsplash.com/photo-1766763845459-08a5a630da65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D",
-    review:
-      "Reliable logistics and great support. Working with them has boosted my business.",
-    rating: 4.9,
-  },
+  name: "Mr. Shivam Ashish",
+  role: "Franchise Owner - Shreemaya Packaged Foods",
+  img: shivam,
+  review:
+  "Premium quality snacks with consistent taste and packaging. Boosted my sales with reliable supply and strong brand trust.",
+  rating: 4.9,
+},
   {
     name: "Neha Singh",
     role: "Customer",

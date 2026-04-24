@@ -542,7 +542,7 @@ const deleteOrder = (id) => {
 
         {/* USER IMAGE */}
         <img
-          src="https://randomuser.me/api/portraits/men/75.jpg"
+          src="https://media.licdn.com/dms/image/v2/D5603AQHmE47wsBZzeg/profile-displayphoto-scale_400_400/B56Ztn4HaRJoAg-/0/1766974324981?e=2147483647&v=beta&t=s4jgR6q0asSlNPJUQbTmw8olwx79EVzxPeLdA7GwMV8"
           className="w-20 h-20 rounded-full border-2 border-white object-cover"
           alt="Ashish Gupta"
         />
@@ -550,7 +550,7 @@ const deleteOrder = (id) => {
         {/* DETAILS */}
         <div className="text-center md:text-left">
 
-          <h3 className="text-xl font-bold">Ashish Gupta</h3>
+          <h3 className="text-xl font-bold">Mr. Ashish Gupta</h3>
           <p className="text-green-100 text-sm">
             Franchise Owner – Shreemaya Dairy (Patna, Bihar)
           </p>
