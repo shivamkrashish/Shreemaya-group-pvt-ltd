@@ -30,7 +30,7 @@ const testimonials = [
   {
     name: "Mrs. Manisha Yadav",
     role: "Franchise Owner - Shreemaya Restaurant",
-    img: "ttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBPhcdJ6Nx3Vv4Wx040iAZcMNQSKQfXsd0zA&s",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBPhcdJ6Nx3Vv4Wx040iAZcMNQSKQfXsd0zA&s",
     review:
       "Shreemaya Group delivers excellent quality, hygiene, and taste—customers truly trust the brand.",
     rating: 5,
