@@ -28,11 +28,11 @@ const testimonials = [
   rating: 4.9,
 },
   {
-    name: "Neha Singh",
-    role: "Customer",
-    img: "https://images.unsplash.com/photo-1608539095410-2a415fde9d75?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Mrs. Manisha Yadav",
+    role: "Franchise Owner - Shreemaya Restaurant",
+    img: "ttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBPhcdJ6Nx3Vv4Wx040iAZcMNQSKQfXsd0zA&s",
     review:
-      "The ice cream range is just wow! Premium taste and quality like never before.",
+      "Shreemaya Group delivers excellent quality, hygiene, and taste—customers truly trust the brand.",
     rating: 5,
   },
   {

@@ -355,7 +355,6 @@ const filtered = productsData.filter((p) => {
   const total = cart.reduce((a, b) => a + b.price * b.qty, 0);
   
 
-  /* ================== ORDER ================== */
 /* ================== ORDER ================== */
 const placeOrder = () => {
   if (!customer.name || !customer.address || !customer.phone) {
@@ -954,8 +953,6 @@ const deleteOrder = (id) => {
   </div>
 )}
 
- 
-
  {/* ================= CHECKOUT ================= */}
 {checkoutOpen && (
   <div
@@ -1068,8 +1065,7 @@ const deleteOrder = (id) => {
     </div>
   </div>
 )}
-
-/* ================= ORDER HISTORY ================= */
+{/* ================= ORDER HISTORY =================  */}
 {ordersOpen && (
   <div
     className="fixed inset-0 bg-black/80 backdrop-blur-md flex justify-center items-center z-50"
