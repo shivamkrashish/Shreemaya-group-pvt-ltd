@@ -53,7 +53,7 @@ export const branches = [
 
   {
     id: "restaurant",
-    title: "🍽️ Dining Experience",
+    title: "🍽️ Shreemaya Restaurant",
     desc: "Our restaurant provides a premium dining experience with a perfect blend of taste, hygiene, and excellent customer service.",
 
     image: restaurantImg,
