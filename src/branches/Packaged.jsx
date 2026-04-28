@@ -190,7 +190,7 @@ const productsData = [
 /* ================== CATEGORIES ================== */
 const categories = ["All", "Pasta", "Chips", "Chatore", "Tunch", "Kurkure"];
 /* ================== COMPONENT ================== */
-const Icecrem = () => {
+const Packeged = () => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
@@ -1016,4 +1016,4 @@ const deleteOrder = (id) => {
   );
 };
 
-export default Icecrem;
+export default Packeged;
