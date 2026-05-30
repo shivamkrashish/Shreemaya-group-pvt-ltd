@@ -149,8 +149,6 @@ const BusinessPage = () => {
         </section>
 
       </div>
-
-      {/* ✅ FOOTER (FULL WIDTH — NO GAP) */}
       <Footer />
 
     </div>
