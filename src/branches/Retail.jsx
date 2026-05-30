@@ -10,7 +10,7 @@ import {
 // ===============================
 // SHOP DATA
 // ===============================
-import p from '../assets/Prabhat.png'
+import p from '../assets/prabhat.png'
 const shops = [
   {
   id: 4,
